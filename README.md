@@ -21,11 +21,12 @@
     <li><a href="#module-details">Module Details</a></li>
     <li><a href="#task-examples">Task Examples</a></li>
     <li><a href="#iteration-types">Iteration Types</a></li>
-    <li><a href="#notification-types">Iteration Types</a></li>
-    <li><a href="#stubbing-and-logging">Stubbing & Logging</a></li>
-    <li><a href="#users">Users</a></li>
-    <li><a href="#notifications-form">Notifications Form</a></li>
-    <li><a href="#evaluations">Evaluations</a></li>
+    <li><a href="#rouping-of-tasks">Grouping of Tasks</a></li>
+    <li><a href="#conceptual-description">Conceptual Description</a></li>
+    <li><a href="#structure-the-process-model">Structure the process model</a></li>
+    <li><a href="#structure-the-data">Structure the data</a></li>
+    <li><a href="#opinions-and-hypotetical-observaions">Opinions and hypothetical observations</a></li>
+    <li><a href="#more-information">More Information</a></li>
     <li><a href="#instalation">Installation</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
