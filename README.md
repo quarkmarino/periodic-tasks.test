@@ -28,6 +28,7 @@
     <li><a href="#opinions-and-hypotetical-observaions">Opinions and hypothetical observations</a></li>
     <li><a href="#more-information">More Information</a></li>
     <li><a href="#instalation">Installation</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -289,6 +290,17 @@ The functionality or development that you have most "enjoyed" programming/solvin
         6.2.2 Inspect the preview of the dates
         6.2.3 Add the task
         6.2.4 Inspect the tasks list, filter the tasks and mark tasks as completed in case
+
+# Screenshots
+
+<img src="screenshots/Screenshot from 2022-12-13 16-38-11.png" alt="sc1">
+<img src="screenshots/Screenshot from 2022-12-13 16-49-33.png" alt="sc3">
+<img src="screenshots/Screenshot from 2022-12-13 16-49-37.png" alt="sc3">
+<img src="screenshots/Screenshot from 2022-12-13 16-50-21.png" alt="sc3">
+<img src="screenshots/Screenshot from 2022-12-13 16-50-24.png" alt="sc3">
+<img src="screenshots/Screenshot from 2022-12-13 16-52-57.png" alt="sc3">
+<img src="screenshots/Screenshot from 2022-12-13 16-53-21.png" alt="sc3">
+
 
 <!-- LICENSE -->
 ## License

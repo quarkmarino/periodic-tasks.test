@@ -26,6 +26,7 @@ class Task extends Model implements Presentable
         'scale' => TimeScaleEnum::class,
         'starts_at' => 'date',
         'ends_at' => 'date',
+        'times' => 'integer',
     ];
 
     # Default Presenter

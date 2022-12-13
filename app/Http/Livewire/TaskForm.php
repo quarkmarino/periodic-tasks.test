@@ -59,23 +59,18 @@ class TaskForm extends Component
             ],
             'monthSchedule.month' => [
                 'nullable',
-                // 'required_if:task.scale,'.TimeScaleEnum::MONTH_SCALE->value,
                 Rule::in(MonthEnum::values())
             ],
             'monthSchedule.month_day' => [
                 'nullable',
                 'sometimes',
                 Rule::requiredIf(request()->get('task.scale') == TimeScaleEnum::MONTH_SCALE->value && !request()->get('monthSchedule.nth_week_day.nth') && !request()->get('monthSchedule.nth_week_day.week_day')),
-                // 'required_if:task.scale,'.TimeScaleEnum::MONTH_SCALE->value,
-                // 'required_without_all:monthSchedule.nth_week_day.nth,monthSchedule.nth_week_day.week_day',
                 'integer',
                 'between:0,31'
             ],
             'monthSchedule.nth_week_day' => [
                 'nullable',
-                // 'required_if:task.scale,'.TimeScaleEnum::MONTH_SCALE->value,
                 Rule::requiredIf(request()->get('task.scale') == TimeScaleEnum::MONTH_SCALE->value && !request()->get('monthSchedule.month_day')),
-                // 'required_without:monthSchedule.month_day',
                 'required_array_keys:nth,week_day'
             ],
             'monthSchedule.nth_week_day.nth' => [
@@ -85,7 +80,6 @@ class TaskForm extends Component
             'monthSchedule.nth_week_day.week_day' => [
                 'nullable',
                 Rule::requiredIf(request()->get('task.scale') == TimeScaleEnum::MONTH_SCALE->value && request()->get('monthSchedule.nth_week_day.nth')),
-                // 'required_with:monthSchedule.nth_week_day.nth',
                 Rule::in(WeekDayEnum::values())
             ],
         ];
@@ -98,8 +92,6 @@ class TaskForm extends Component
 
     public function render()
     {
-        // $this->previewDates = $this->previewDates();
-
         return view('livewire.task-form');
     }
 
@@ -116,7 +108,6 @@ class TaskForm extends Component
     {
         if ($this->task->end_at) {
             $this->task->end_at = $this->task->end_at->format('Y-m-d');
-            // $this->task->times = null;
         }
 
         $this->task->end_at = null;
@@ -150,15 +141,12 @@ class TaskForm extends Component
         }
     }
 
-    // public function updatedTaskTimes()
-    // {
-    //     if ($this->task->times <= 0) {
-    //         $this->task->times = null;
-    //     }
-    //     else {
-    //         $this->task->end_at = null;
-    //     }
-    // }
+    public function updatedTaskTimes()
+    {
+        if (!$this->task->times) {
+            $this->task->times = null;
+        }
+    }
 
     # Computed Properties
 
@@ -217,13 +205,6 @@ class TaskForm extends Component
             TimeScaleEnum::DAY_SCALE => $this->task->grouppedDates($startDate, $endDate),
             TimeScaleEnum::WEEK_SCALE => $this->task->grouppedDates($startDate, $endDate, $this->weekSchedule),
             TimeScaleEnum::MONTH_SCALE => $this->task->grouppedDates($startDate, $endDate, $this->monthSchedule),
-            // TimeScaleEnum::DAY_SCALE => $this->task->present()
-            //     ->dailyPeriodicDates($startDate, $endDate, (int) $this->task->every, (int) $this->task->times),
-            // TimeScaleEnum::WEEK_SCALE => $this->task->present()
-            //     ->weeklyPeriodicDates($startDate, $endDate, $this->weekSchedule, (int) $this->task->every, (int) $this->task->times),
-            // TimeScaleEnum::MONTH_SCALE => $this->task->present()
-            //     ->monthlyPeriodicDates($startDate, $endDate, $this->monthSchedule, (int) $this->task->every, (int) $this->task->times),
-            // default => null,
         };
     }
 
