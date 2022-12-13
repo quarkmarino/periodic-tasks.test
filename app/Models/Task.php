@@ -36,12 +36,12 @@ class Task extends Model implements Presentable
 
     public function weekSchedule()
     {
-        return $this->morphOne(WeekSchedule::class, 'scheduable');
+        return $this->hasOne(WeekSchedule::class, 'task_id');
     }
 
     public function monthSchedule()
     {
-        return $this->morphOne(MonthSchedule::class, 'scheduable');
+        return $this->hasOne(MonthSchedule::class, 'task_id');
     }
 
     public function completions()

@@ -3,7 +3,7 @@
         <div class="basis-1/3">
             <livewire:task-form />
         </div>
-        <div class="basis-2/3">
+        <div class="basis-1/3">
             <livewire:tasks-list />
         </div>
     </div>

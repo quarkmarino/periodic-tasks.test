@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Data\Enums\TaskGroupingEnum;
 use App\Data\Enums\TimeScaleEnum;
+use App\Models\Completion;
 use App\Models\Task;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -68,7 +69,7 @@ class TasksList extends Component
                 ? [Carbon::now(), Carbon::now()->next(Carbon::SATURDAY)]
                 : [Carbon::now()->next(Carbon::SUNDAY), Carbon::now()->next(Carbon::SUNDAY)->next(Carbon::SATURDAY)],
             'next_month' => [Carbon::now()->startOfMonth()->addMonth(), Carbon::now()->startOfMonth()->addMonth()->endOfMonth()],
-            'custom' => [$this->startDate, $this->endDate],
+            // 'custom' => [$this->startDate, $this->endDate],
             default => [Carbon::now(), Carbon::now()],
         };
 
@@ -82,5 +83,17 @@ class TasksList extends Component
             })
             ->get();
         // dd(queries(\DB::getQueryLog()));
+    }
+
+    # Livewire Actions
+
+    public function completeTask($completionId)
+    {
+        if(Completion::find($completionId)->update(['completed_at' => Carbon::now()])){
+            session()->flash('message', __('completion.events.created.success'));
+        }
+        else {
+            session()->flash('message', __('completion.events.created.failure'));
+        }
     }
 }

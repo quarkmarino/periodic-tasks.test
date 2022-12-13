@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->json('week_days');
 
-            $table->morphs('scheduable');
+            $table->foreignId('task_id');
 
             $table->timestamps();
         });

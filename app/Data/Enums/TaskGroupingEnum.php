@@ -13,7 +13,7 @@ enum TaskGroupingEnum: string
     case TOMORROW   = 'tomorrow';
     case NEXT_WEEK  = 'next_week';
     case NEXT_MONTH = 'next_month';
-    case CUSTOM     = 'custom';
+    // case CUSTOM     = 'custom';
 
     public function label(): string
     {
@@ -22,7 +22,7 @@ enum TaskGroupingEnum: string
             Self::TOMORROW   => 'Tomorrow',
             Self::NEXT_WEEK  => 'Next Week',
             Self::NEXT_MONTH => 'Next Month',
-            Self::CUSTOM     => 'Custom',
+            // Self::CUSTOM     => 'Custom',
         };
     }
 }

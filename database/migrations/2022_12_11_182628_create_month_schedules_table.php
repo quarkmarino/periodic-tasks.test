@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->string('month')->nullable()->default(null);
 
-            $table->morphs('scheduable');
+            $table->foreignId('task_id');
 
             $table->timestamps();
         });

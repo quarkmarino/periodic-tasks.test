@@ -12,7 +12,8 @@ class Completion extends Model
     use HasFactory;
 
     protected $fillable = [
-        'task_date'
+        'task_date',
+        'completed_at',
     ];
 
     protected $casts = [
