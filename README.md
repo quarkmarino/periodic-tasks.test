@@ -10,7 +10,7 @@
   <p align="center">
     Tasks Test Demo Site
     <br />
-    <a href="http://marianoescalera.me/login">View Demo</a>
+    <a href="https://tasks.marianoescalera.me/tasks">View Demo</a>
   </p>
 </p>
 
